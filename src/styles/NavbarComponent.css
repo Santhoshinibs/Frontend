@@ -1,0 +1,35 @@
+/* NavbarComponent.css */
+
+.navbar {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  background-color: #111 !important;
+}
+
+.navbar-brand {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #f7c32e !important; /* VERZAA brand color */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.navbar-brand:hover {
+  color: #ffc107 !important;
+}
+
+.nav-link {
+  font-size: 1rem;
+  margin-left: 20px;
+  color: #ccc !important;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #fff !important;
+}
+
+.badge {
+  font-size: 0.75rem;
+  margin-left: 5px;
+  vertical-align: text-top;
+}

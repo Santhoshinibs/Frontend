@@ -1,0 +1,53 @@
+.shipping-container {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.shipping-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #007bff;
+  font-weight: 600;
+}
+
+.shipping-container .form-label {
+  font-weight: 500;
+  color: #333;
+}
+
+.shipping-container .form-control {
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 1rem;
+}
+
+.shipping-container .btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  background-color: #007bff;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.shipping-container .btn:hover {
+  background-color: #0056b3;
+}
+
+@media screen and (max-width: 768px) {
+  .shipping-container {
+    margin: 30px 15px;
+    padding: 20px;
+  }
+
+  .shipping-container h2 {
+    font-size: 1.8rem;
+  }
+}

@@ -1,0 +1,30 @@
+.back-home-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  width: fit-content;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.back-home-wrapper:hover {
+  background-color: #f0f0f0;
+}
+
+.back-arrow {
+  color: #0d6efd;
+  font-size: 20px;
+}
+
+.back-text {
+  color: #0d6efd;
+  font-weight: 500;
+  display: none;
+}
+
+.back-home-wrapper:hover .back-text {
+  display: inline;
+}

@@ -1,0 +1,26 @@
+.top-bar {
+  font-size: 14px;
+}
+
+.search-box {
+  width: 200px;
+  font-size: 14px;
+}
+.top-bar{
+  justify-content: center;
+}
+
+.banner-slide {
+  height: 300px;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.banner-text {
+  max-width: 400px;
+}
+
+.banner-text h2 {
+  font-size: 32px;
+  line-height: 1.2;
+}
