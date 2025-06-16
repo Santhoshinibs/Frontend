@@ -13,7 +13,7 @@ function Register() {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-     await axios.post("https://resilient-manifestation.up.railway.app/api/users/register", {
+      await axios.post('https://gentle-dedication.up.railway.app', {
         name,
         email,
         password,
