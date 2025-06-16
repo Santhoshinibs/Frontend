@@ -36,7 +36,7 @@ export default function ProductDetails() {
 
     try {
       await axios.post(
-        `http://localhost:5000/api/products/${id}/reviews`,
+         `${import.meta.env.VITE_API_URL}/api/products/${id}/reviews`,
         { ratings, comments },
         { headers: { Authorization: `Bearer ${token}` } }
       );
