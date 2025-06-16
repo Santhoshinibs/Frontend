@@ -9,7 +9,7 @@ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-
+  console.log("API URL:", process.env.REACT_APP_API_URL);
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
