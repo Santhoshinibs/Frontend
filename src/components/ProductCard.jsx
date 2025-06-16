@@ -10,8 +10,9 @@ function ProductCard({ product }) {
         src={
           product.image.startsWith("http")
             ? product.image
-            : `http://localhost:5000${product.image}`
+            : `${import.meta.env.VITE_API_URL}${product.image}`
         }
+        onError={(e) => { e.target.src = '/fallback.jpg'; }}
         alt={product.name}
         style={{ objectFit: "cover", height: "200px" }}
       />
@@ -20,7 +21,12 @@ function ProductCard({ product }) {
           <Card.Title>{product.name}</Card.Title>
           <Card.Text>₹{product.price}</Card.Text>
         </div>
-        <Button as={Link} to={`/product/${product._id}`} variant="primary" className="mt-2">
+        <Button
+          as={Link}
+          to={`/product/${product._id}`}
+          variant="primary"
+          className="mt-2"
+        >
           View
         </Button>
       </Card.Body>
@@ -29,7 +35,4 @@ function ProductCard({ product }) {
 }
 
 export default ProductCard;
-
-
-
 

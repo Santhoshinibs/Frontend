@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useCart } from '../context/CartContext';
@@ -10,13 +9,13 @@ function Product() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const { addToCart, cartItems } = useCart();
+  const { addToCart } = useCart();
 
   useEffect(() => {
     setLoading(true);
     setError(null);
 
-    axios.get('http://localhost:5000/api/products')
+    axios.get(`${import.meta.env.VITE_API_URL}/api/products`)
       .then(res => {
         setProducts(res.data);
         setLoading(false);
@@ -33,12 +32,19 @@ function Product() {
 
   return (
     <div className="products-container">
-      <BackToHome/>
+      <BackToHome />
       <h1>Product Catalog</h1>
       <div className="products-grid">
         {products.map(product => (
           <div key={product._id} className="product-card">
-            <img src={product.image} alt={product.name} />
+            <img
+              src={
+                product.image.startsWith("http")
+                  ? product.image
+                  : `${import.meta.env.VITE_API_URL}/api/products/${product.image}`
+              }
+              alt={product.name}
+            />
             <div className="card-body">
               <Link to={`/product/${product._id}`} className="product-title-link">
                 {product.name}
@@ -46,10 +52,7 @@ function Product() {
               <p className="price">₹{product.price}</p>
               <button
                 className="btn-buy"
-                onClick={() => {
-                  addToCart(product);
-                  console.log("Added to cart:", product);
-                }}
+                onClick={() => addToCart(product)}
               >
                 Add to Cart
               </button>
@@ -62,3 +65,4 @@ function Product() {
 }
 
 export default Product;
+

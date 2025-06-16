@@ -39,7 +39,7 @@ function PlaceOrder() {
 
   try {
     const { data } = await axios.post(
-      'http://localhost:5000/api/orders',
+      `${import.meta.env.VITE_API_URL}/api/products`,
       {
         orderItems,
         shippingAddress,
