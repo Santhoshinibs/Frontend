@@ -7,7 +7,11 @@ function ProductCard({ product }) {
     <Card className="h-100">
       <Card.Img
         variant="top"
-     src={ product.image.startsWith("http") ? product.image : ${import.meta.env.VITE_API_URL}${product.image} }
+    src={
+  product.image.startsWith("http")
+    ? product.image
+    : `https://fakestoreapi.com${product.image}`
+}
 
         onError={(e) => { e.target.src = '/fallback.jpg'; }}
         alt={product.name}
@@ -32,5 +36,6 @@ function ProductCard({ product }) {
 }
 
 export default ProductCard;
+
 
 
