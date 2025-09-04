@@ -4,19 +4,18 @@ import { Link } from "react-router-dom";
 
 function ProductCard({ product }) {
   return (
-    <Card className="h-100">
-      <Card.Img
-        variant="top"
-    src={
-  product.image.startsWith("http")
-    ? product.image
-    : `https://fakestoreapi.com${product.image}`
-}
+    <Card.Img
+  variant="top"
+  src={
+    product.image?.startsWith('http')
+      ? product.image
+      : `${import.meta.env.VITE_API_URL}${product.image}`
+  }
+  onError={(e) => { e.target.src = '/fallback.jpg'; }}
+  alt={product.name}
+  style={{ objectFit: "cover", height: "200px" }}
+/>
 
-        onError={(e) => { e.target.src = '/fallback.jpg'; }}
-        alt={product.name}
-        style={{ objectFit: "cover", height: "200px" }}
-      />
       <Card.Body className="d-flex flex-column justify-content-between">
         <div>
           <Card.Title>{product.name}</Card.Title>
@@ -36,6 +35,7 @@ function ProductCard({ product }) {
 }
 
 export default ProductCard;
+
 
 
 
